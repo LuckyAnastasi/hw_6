@@ -1,13 +1,34 @@
 import sys
 from pathlib import Path
 
+#list for images
 JPEG_IMAGES = []
 JPG_IMAGES = []
 PNG_IMAGES = []
 SVG_IMAGES = []
+#list for audio
 MP3_AUDIO = []
-OTHER = []
+OGG_AUDIO = []
+WAV_AUDIO = []
+AMR_AUDIO = []
+#list for video
+MP4_VIDEO = []
+AVI_VIDEO = []
+MOV_VIDEO = []
+MKV_VIDEO = []
+#list for doc
+DOC_DOC = []
+DOCX_DOC = []
+TXT_DOC = []
+PDF_DOC = []
+XLSX_DOC = []
+PPTX_DOC = []
+#list for ARCHIVES
 ARCHIVES = []
+GZ_ARCHIVES = []
+TAR_ARCHIVES = []
+
+OTHER = []
 
 REGISTER_EXTENSIONS = {
     'JPEG': JPEG_IMAGES,
@@ -15,7 +36,22 @@ REGISTER_EXTENSIONS = {
     'JPG': JPG_IMAGES,
     'SVG': SVG_IMAGES,
     'MP3': MP3_AUDIO,
-    'ZIP': ARCHIVES
+    'OGG': OGG_AUDIO,
+    'WAV': WAV_AUDIO,
+    'AMR': AMR_AUDIO,
+    'MP4': MP4_VIDEO,
+    'AVI': AVI_VIDEO,
+    'MOV': MOV_VIDEO,
+    'MKV': MKV_VIDEO,
+    'DOC': DOC_DOC,
+    'DOCX': DOCX_DOC,
+    'TXT': TXT_DOC,
+    'PDF': PDF_DOC,
+    'XLSX': XLSX_DOC,
+    'PPTX': PPTX_DOC,
+    'ZIP': ARCHIVES,
+    'GZ': GZ_ARCHIVES,
+    'TAR': TAR_ARCHIVES 
 }
 
 FOLDERS = []
@@ -60,7 +96,7 @@ def scan(folder: Path) -> None:
 if __name__ == '__main__':
     folder_for_scan = sys.argv[1]
     print(f'Start in folder {folder_for_scan}')
-
+#ZMINUTU SCAN!
     scan(Path(folder_for_scan))
     print(f'Images jpeg: {JPEG_IMAGES}')
     print(f'Images jpg: {JPG_IMAGES}')
