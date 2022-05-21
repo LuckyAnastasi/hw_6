@@ -46,19 +46,52 @@ def main(folder: Path):
     parser.scan(folder)
     for file in parser.JPEG_IMAGES:
         # pathjoin(str(folder), 'images', 'JPEG')
-        handle_media(file, folder / 'images' / 'JPEG')
+        handle_media(file, folder / 'images')
     for file in parser.JPG_IMAGES:
-        handle_media(file, folder / 'images' / 'JPG')
+        handle_media(file, folder / 'images')
     for file in parser.PNG_IMAGES:
-        handle_media(file, folder / 'images' / 'PNG')
+        handle_media(file, folder / 'images')
     for file in parser.SVG_IMAGES:
-        handle_media(file, folder / 'images' / 'SVG')
+        handle_media(file, folder / 'images')
+    # for file in parser.PNG_IMAGES: we can change deep of folders
+    #     handle_media(file, folder / 'images' / 'PNG')
+    # for file in parser.SVG_IMAGES:
+    #     handle_media(file, folder / 'images' / 'SVG')
+    for file in parser.OGG_AUDIO:
+        handle_media(file, folder / 'audio')
     for file in parser.MP3_AUDIO:
-        handle_media(file, folder / 'audio' / 'MP3')
-
+        handle_media(file, folder / 'audio')
+    for file in parser.WAV_AUDIO:
+        handle_media(file, folder / 'audio')
+    for file in parser.AMR_AUDIO:
+        handle_media(file, folder / 'audio')
+    for file in parser.MP4_VIDEO:
+        handle_media(file, folder / 'video')
+    for file in parser.AVI_VIDEO:
+        handle_media(file, folder / 'video')
+    for file in parser.MOV_VIDEO:
+        handle_media(file, folder / 'video')
+    for file in parser.MKV_VIDEO:
+        handle_media(file, folder / 'video')
+    for file in parser.DOC_DOC:
+        handle_media(file, folder / 'documents')
+    for file in parser.DOCX_DOC:
+        handle_media(file, folder / 'documents')
+    for file in parser.TXT_DOC:
+        handle_media(file, folder / 'documents')
+    for file in parser.PDF_DOC:
+        handle_media(file, folder / 'documents')
+    for file in parser.XLSX_DOC:
+        handle_media(file, folder / 'documents')
+    for file in parser.PPTX_DOC:
+        handle_media(file, folder / 'documents')
     for file in parser.OTHER:
         handle_other(file, folder / 'OTHER')
     for file in parser.ARCHIVES:
+        handle_archive(file, folder / 'archives')
+    for file in parser.GZ_ARCHIVES:
+        handle_archive(file, folder / 'archives')
+    for file in parser.TAR_ARCHIVES:
         handle_archive(file, folder / 'archives')
 
     # Выполняем реверс списка для того, чтобы все папки удалить.
@@ -73,4 +106,4 @@ if __name__ == '__main__':
         main(folder_for_scan.resolve())
 
 
-# cat.jpg  cat.JPG
+
